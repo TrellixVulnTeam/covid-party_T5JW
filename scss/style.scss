@@ -1,0 +1,107 @@
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+// Colors 
+$blue: #4B61D1;
+$dark_blue: #223385;
+$green: #7CD136;
+$light_grey: #fbfbfb;
+$dark_gray: #363A52;
+
+// General
+body {
+    background: $light_grey;
+    margin: 0;
+    padding: 0;
+}
+
+a { 
+    color: $dark_blue;
+}
+
+a:hover {
+    color: $blue;
+}
+
+p, a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+h1, h2 {
+    font-family: 'Bebas Neue', cursive;
+    color: $dark_gray;
+}
+
+h1 {
+    font-size: 8rem;
+    margin: 0
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+.sep {
+    height: 80px;
+    padding: .5em 0;
+    margin: 2em 0;
+    background-color: $green;
+}
+
+.btn {
+    background-color: $dark_blue;
+    padding: .8em 1em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: $blue;
+    padding: .8em 1em;
+    color: #fff;
+    text-decoration: none;
+}
+// Header
+
+#logo {
+    width: 150px;
+}
+#banner {
+    height: 100vh;
+    padding: 2em 3em;
+}
+// Section 
+
+section {
+    margin: 0 4em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 5em;
+
+    &#sec {
+
+        &-d {
+           
+            h1 {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+        }
+
+        &-e {
+            grid-template-columns: repeat(1, 1fr);
+            h1 {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+        }
+
+    }
+}
+
+// Media
+@import "media";
