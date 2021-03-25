@@ -9,6 +9,16 @@ $green: #7CD136;
 $light_grey: #fbfbfb;
 $dark_gray: #363A52;
 
+//var
+$max-width: 1600px;
+
+// class function
+
+.mw-auto {
+    width: 100%;
+    max-width: $max-width;
+    margin: auto;
+}
 // General
 body {
     background: $light_grey;
@@ -45,18 +55,25 @@ h2 {
     font-size: 3rem;
 }
 
+ul {
+    margin: none;
+    text-decoration: none;
+}
+
 .sep {
     height: 80px;
     padding: .5em 0;
-    margin: 2em 0;
+    margin: 5em 0;
     background-color: $green;
 }
 
 .btn {
+    display: inline-block;
     background-color: $dark_blue;
     padding: .8em 1em;
     color: #fff;
     text-decoration: none;
+    margin: 2em 2em 2em 0;
 }
 
 .btn:hover {
@@ -73,14 +90,21 @@ h2 {
 #banner {
     height: 100vh;
     padding: 2em 3em;
+
+    h1 {
+        display: none;
+    }
 }
 // Section 
 
 section {
-    margin: 0 4em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 0 5em;
+    
+    & > div {
+        margin: 5em 0;
+    }
 
     &#sec {
 
@@ -102,6 +126,18 @@ section {
 
     }
 }
+
+// footer
+footer {
+    background-color: $blue;
+
+    div {
+        width: 10;
+        max-width: $max-width;
+        margin: auto;
+    }
+}
+
 
 // Media
 @import "media";

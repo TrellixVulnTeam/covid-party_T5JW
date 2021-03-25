@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.mw-auto {
+  width: 100%;
+  max-width: 1600px;
+  margin: auto; }
+
 body {
   background: #fbfbfb;
   margin: 0;
@@ -28,17 +33,23 @@ h1 {
 h2 {
   font-size: 3rem; }
 
+ul {
+  margin: none;
+  text-decoration: none; }
+
 .sep {
   height: 80px;
   padding: .5em 0;
-  margin: 2em 0;
+  margin: 5em 0;
   background-color: #7CD136; }
 
 .btn {
+  display: inline-block;
   background-color: #223385;
   padding: .8em 1em;
   color: #fff;
-  text-decoration: none; }
+  text-decoration: none;
+  margin: 2em 2em 2em 0; }
 
 .btn:hover {
   background-color: #4B61D1;
@@ -52,12 +63,15 @@ h2 {
 #banner {
   height: 100vh;
   padding: 2em 3em; }
+  #banner h1 {
+    display: none; }
 
 section {
-  margin: 0 4em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0 5em; }
+  section > div {
+    margin: 5em 0; }
   section#sec-d h1 {
     grid-column-start: 1;
     grid-column-end: 3; }
@@ -66,6 +80,13 @@ section {
     section#sec-e h1 {
       grid-column-start: 1;
       grid-column-end: 3; }
+
+footer {
+  background-color: #4B61D1; }
+  footer div {
+    width: 10;
+    max-width: 1600px;
+    margin: auto; }
 
 @media screen and (max-width: 1000px) {
   section {
