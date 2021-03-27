@@ -5,6 +5,22 @@
   max-width: 1600px;
   margin: auto; }
 
+.img-responsive {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%; }
+
+.flex {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.white-space {
+  display: block;
+  height: 100px; }
+
 body {
   background: #fbfbfb;
   margin: 0;
@@ -34,59 +50,141 @@ h2 {
   font-size: 3rem; }
 
 ul {
-  margin: none;
-  text-decoration: none; }
+  margin: 0;
+  list-style: none;
+  padding: 0; }
 
 .sep {
-  height: 80px;
+  height: 60px;
   padding: .5em 0;
-  margin: 5em 0;
-  background-color: #7CD136; }
+  margin: 3em 0;
+  background: url("/dist/img/asset/virus.png");
+  background-origin: content-box;
+  background-position: center;
+  background-repeat: repeat; }
 
 .btn {
   display: inline-block;
+  width: 130px;
   background-color: #223385;
-  padding: .8em 1em;
+  padding: .5em 1em;
   color: #fff;
+  text-align: center;
   text-decoration: none;
-  margin: 2em 2em 2em 0; }
+  transition: all 300ms ease-in-out; }
 
 .btn:hover {
+  width: 140px;
   background-color: #4B61D1;
-  padding: .8em 1em;
   color: #fff;
   text-decoration: none; }
 
 #logo {
   width: 150px; }
 
-#banner {
+#banner-full {
+  position: relative;
   height: 100vh;
   padding: 2em 3em; }
-  #banner h1 {
+  #banner-full h1 {
+    display: none; }
+  #banner-full .flex {
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+    justify-content: left;
+    width: 100%; }
+    #banner-full .flex > div {
+      display: flex;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%; }
+    #banner-full .flex h2 {
+      height: 78px;
+      width: calc(100% - 220px);
+      margin: 0px -160px;
+      padding: 7px 40px 0 180px;
+      font-size: 3rem;
+      align-self: flex-end;
+      background-color: #223385;
+      color: #fff;
+      z-index: -1; }
+
+#banner-half {
+  height: 50vh;
+  padding: 2em 3em; }
+  #banner-half h1 {
     display: none; }
 
-section {
+section > div.index {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0 5em; }
-  section > div {
-    margin: 5em 0; }
-  section#sec-d h1 {
+  grid-gap: 0 5em;
+  margin: 0 5em; }
+  section > div.index-d h1 {
     grid-column-start: 1;
     grid-column-end: 3; }
-  section#sec-e {
-    grid-template-columns: repeat(1, 1fr); }
-    section#sec-e h1 {
+  section > div.index-e {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 0 4em 0; }
+    section > div.index-e h1 {
       grid-column-start: 1;
       grid-column-end: 3; }
 
+section > div.player, section > div.deck {
+  margin: 0 5em; }
+  section > div.player-a, section > div.deck-a {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em; }
+    section > div.player-a h2, section > div.deck-a h2 {
+      grid-column-start: 1;
+      grid-column-end: 5; }
+    section > div.player-a img, section > div.deck-a img {
+      object-fit: cover;
+      width: 100%;
+      max-height: 100%; }
+
+section > div.master, section > div.about {
+  margin: 0 5em; }
+
 footer {
-  background-color: #4B61D1; }
-  footer div {
-    width: 10;
-    max-width: 1600px;
-    margin: auto; }
+  background-color: #4B61D1;
+  padding: 0 5em; }
+  footer h2 {
+    margin: 0;
+    padding: 1em 0; }
+  footer div > .sviluppatori {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+    padding: 0 0 2em 0; }
+    footer div > .sviluppatori * {
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      margin: 0; }
+    footer div > .sviluppatori span {
+      font-size: 1rem; }
+
+.modal a.close-modal {
+  position: absolute;
+  top: -12.5px;
+  right: -12.5px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  text-indent: -9999px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(/dist/img/asset/ics.svg);
+  transform: rotate(0deg);
+  transition: transform 1s ease-in-out; }
+
+.modal a.close-modal:hover {
+  transform: rotate(30deg); }
 
 @media screen and (max-width: 1000px) {
   section {

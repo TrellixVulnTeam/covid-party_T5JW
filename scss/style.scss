@@ -8,6 +8,7 @@ $dark_blue: #223385;
 $green: #7CD136;
 $light_grey: #fbfbfb;
 $dark_gray: #363A52;
+$red: #c63232;
 
 //var
 $max-width: 1600px;
@@ -19,6 +20,26 @@ $max-width: 1600px;
     max-width: $max-width;
     margin: auto;
 }
+
+.img-responsive {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+
+.flex {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.white-space {
+    display: block;
+    height: 100px;
+}
+
 // General
 body {
     background: $light_grey;
@@ -56,29 +77,36 @@ h2 {
 }
 
 ul {
-    margin: none;
-    text-decoration: none;
+    margin: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .sep {
-    height: 80px;
+    height: 60px;
     padding: .5em 0;
-    margin: 5em 0;
-    background-color: $green;
+    margin: 3em 0;
+    background: url('/dist/img/asset/virus.png');
+    background-origin: content-box;
+    background-position: center;
+    background-repeat: repeat;
+
 }
 
 .btn {
     display: inline-block;
+    width: 130px;
     background-color: $dark_blue;
-    padding: .8em 1em;
+    padding: .5em 1em;
     color: #fff;
+    text-align: center;
     text-decoration: none;
-    margin: 2em 2em 2em 0;
+    transition: all 300ms ease-in-out;
 }
 
 .btn:hover {
+    width: 140px;
     background-color: $blue;
-    padding: .8em 1em;
     color: #fff;
     text-decoration: none;
 }
@@ -87,55 +115,166 @@ ul {
 #logo {
     width: 150px;
 }
-#banner {
-    height: 100vh;
-    padding: 2em 3em;
 
-    h1 {
-        display: none;
+#banner {
+
+    &-full {
+        position: relative;
+        height: 100vh;
+        padding: 2em 3em;
+        
+        h1 {
+            display: none;
+        }
+
+        .flex {
+            position: absolute;
+            left: 0;
+            bottom: 80px;
+            justify-content: left;
+            width: 100%;
+            & > div {
+                display: flex;
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+            }
+
+            h2 {
+                height: 78px;
+                width: calc(100% - 220px);
+                margin: 0px -160px;
+                padding: 7px 40px 0 180px;
+                font-size: 3rem;
+                align-self: flex-end;
+                background-color: #223385;
+                color: #fff;
+                z-index: -1;
+            }
+        }
     }
+
+    &-half {
+        height: 50vh;
+        padding: 2em 3em;
+
+        h1 {
+            display: none;
+        }
+    }
+
+    
 }
 // Section 
 
 section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0 5em;
-    
-    & > div {
-        margin: 5em 0;
+
+    //index.html
+    & > div.index {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0 5em;
+        margin: 0 5em;
+
+                &-d {
+                
+                    h1 {
+                        grid-column-start: 1;
+                        grid-column-end: 3;
+                    }
+                }
+
+                &-e {
+                    grid-template-columns: repeat(1, 1fr);
+                    padding: 0 0 4em 0;
+                    h1 {
+                        grid-column-start: 1;
+                        grid-column-end: 3;
+                    }
+                }
+            }
+
+    // player.html, deck.html
+    & > div.player, & > div.deck {
+        margin: 0 5em;
+
+        &-a {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 1em;
+
+            h2 {
+                grid-column-start: 1;
+                grid-column-end: 5;
+            }
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                max-height: 100%;
+            }
+        }
+
+        
+        
     }
 
-    &#sec {
-
-        &-d {
-           
-            h1 {
-                grid-column-start: 1;
-                grid-column-end: 3;
-            }
-        }
-
-        &-e {
-            grid-template-columns: repeat(1, 1fr);
-            h1 {
-                grid-column-start: 1;
-                grid-column-end: 3;
-            }
-        }
-
+    // master.html
+    & > div.master, & > div.about {
+        margin: 0 5em;
+        
     }
 }
 
 // footer
 footer {
     background-color: $blue;
+    padding: 0 5em;
 
-    div {
-        width: 10;
-        max-width: $max-width;
-        margin: auto;
+    h2 {
+        margin: 0;
+        padding: 1em 0;
     }
+
+    div > .sviluppatori {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1em;
+        padding: 0 0 2em 0;
+
+        * {
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            margin: 0;
+        }
+
+        span {
+            font-size: 1rem;
+        }
+    }
+}
+
+// Modal
+.modal a.close-modal {
+    position: absolute;
+    top: -12.5px;
+    right: -12.5px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    text-indent: -9999px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(/dist/img/asset/ics.svg);
+    transform: rotate(0deg);
+    transition: transform 1s ease-in-out;
+}
+
+.modal a.close-modal:hover {
+    transform: rotate(30deg);
 }
 
 
