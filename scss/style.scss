@@ -176,6 +176,18 @@ ul {
                 box-shadow: 0px -3px 15px 5px #363a52;
             }
         }
+
+        // cards.html
+
+        #drawbtn {
+            position: absolute;
+            bottom: 100px;
+            right: 130px;
+            width: 50px;
+            height: 101px;
+            background: url(/dist/img/asset/iphone_mentana.png);
+            transform: rotate3D(1, 0, -1, 45deg) rotateZ(-180deg);;
+        }
     }
 
     &-half {
