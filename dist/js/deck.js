@@ -16,16 +16,10 @@ $(init);
 function init() {
   makeDeck();
   
-  $("#drawbtn").click( function() {
-    
-    var myCard = drawCard();
-    
-    if( myCard ) {
-      makeCard( myCard.rank );
-    } else {
-      alert("no more cards in the deck");
-    }
-    
+  $("#drawbtn").click( function() { 
+
+    var myCard = drawCard();   
+    makeCard( myCard.rank ); 
   });
   
 }
@@ -43,10 +37,7 @@ function makeDeck() {
       
       deck.push(card);
     }
-  
-  
-  console.log( "MADE A NEW DECK OF ", deck.length, " CARDS" );
-  console.log( deck );
+
 }
 
 function drawCard() {
@@ -62,15 +53,10 @@ function drawCard() {
   return card;
 }
 
-function makeCard( rank ) {
-  var card = $(".card.template").clone();
-  
-  card.removeClass("template");
-  
-  card.find(".rank").append("<img src='/dist/img/deck/carta_mentana_"+ rank + ".jpeg' class='img-responsive' />");
-  $("#card_title").html(rank);
-  // Alert numero carta
-  // alert(rank);
 
-  $("body").append(card);
-}
+ function makeCard( rank ) {
+  
+  $("#card_title").html(rank);
+  $(".card_wrap").append("<div class='news' style='background: #4B61D1 url(/dist/img/deck/carta_mentana_"+ rank + ".jpeg) no-repeat left center fixed'></div>");
+} 
+

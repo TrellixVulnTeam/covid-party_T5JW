@@ -8,7 +8,11 @@
 .img-responsive {
   object-fit: cover;
   width: 100%;
-  max-height: 100%; }
+  max-height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 .flex {
   width: auto;
@@ -92,7 +96,7 @@ ul {
   #banner-full h1 {
     display: none; }
   #banner-full .bg_mentana {
-    background: url(/dist/img/asset/mentana.png) no-repeat fixed right/cover;
+    background: url(/dist/img/asset/mentana.png) no-repeat center center/cover fixed;
     position: absolute;
     bottom: 80px;
     left: 0px;
@@ -135,8 +139,9 @@ ul {
     width: 50px;
     height: 101px;
     background: url(/dist/img/asset/iphone_mentana.png);
-    transform: rotate3D(1, 0, -1, 45deg) rotateZ(-180deg);
-    box-shadow: #363A52 1px; }
+    transform: rotate3D(1, 0, -1, 45deg) rotateZ(-180deg) scale(0.8);
+    box-shadow: #363A52 1px;
+    z-index: 2; }
 
 #banner-half {
   height: 50vh;
@@ -248,21 +253,27 @@ footer {
   border: 5px solid black; }
   .card.template {
     width: 60%;
-    height: 50%;
+    height: 500px;
     position: relative; }
-    .card.template > .card_wrap {
+    .card.template .card_wrap {
       width: 100%;
-      padding-bottom: 56.25%;
-      /* 16:9 */
+      height: inherit;
       position: absolute; }
-    .card.template > .rank {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0; }
+      .card.template .card_wrap .rank {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0; }
+      .card.template .card_wrap .news {
+        width: 100%;
+        height: inherit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-clip: border-box; }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1025px) {
   .flex {
     justify-content: initial; }
   .btn {
@@ -274,13 +285,19 @@ footer {
   #banner-full {
     height: 90vh;
     padding: .5em 1em; }
+    #banner-full.banner-cards {
+      height: 100vh; }
     #banner-full .bg_mentana {
+      background: url(/dist/img/asset/mentana_mobile.png) no-repeat right center/cover fixed;
       bottom: 0;
       left: 0;
       width: 100%;
       height: 100%;
       z-index: -2;
       transform: translateY(-40px); }
+      #banner-full .bg_mentana.bg-cards {
+        bottom: 0px;
+        transform: translateY(0px); }
     #banner-full .flex {
       bottom: 0; }
       #banner-full .flex > div {
@@ -292,6 +309,11 @@ footer {
         margin: 0px -160px;
         padding: 7px 40px 0px 180px;
         font-size: 2rem; }
+    #banner-full #drawbtn {
+      position: absolute;
+      bottom: 50px;
+      right: 160px;
+      transform: rotate3D(1, 0, -1, -50deg) rotateZ(-180deg) scale(0.8); }
   #banner-half {
     padding: .5em 1em; }
   section > div.index-a, section > div.index-b, section > div.index-c {
