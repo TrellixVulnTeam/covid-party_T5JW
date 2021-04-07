@@ -101,8 +101,8 @@ ul {
     z-index: -2;
     transform: translateY(-80px); }
     #banner-full .bg_mentana.bg-cards {
-      bottom: -60px;
-      transform: translateY(-60px); }
+      bottom: -120px;
+      transform: translateY(-120px); }
   #banner-full .flex {
     position: absolute;
     left: 0;
@@ -114,6 +114,8 @@ ul {
       width: 160px;
       height: 160px;
       border-radius: 50%; }
+    #banner-full .flex.template {
+      bottom: 0; }
     #banner-full .flex h2 {
       height: 78px;
       width: calc(100% - 220px);
@@ -128,12 +130,13 @@ ul {
       box-shadow: 0px -3px 15px 5px #363a52; }
   #banner-full #drawbtn {
     position: absolute;
-    bottom: 100px;
+    bottom: 150px;
     right: 130px;
     width: 50px;
     height: 101px;
     background: url(/dist/img/asset/iphone_mentana.png);
-    transform: rotate3D(1, 0, -1, 45deg) rotateZ(-180deg); }
+    transform: rotate3D(1, 0, -1, 45deg) rotateZ(-180deg);
+    box-shadow: #363A52 1px; }
 
 #banner-half {
   height: 50vh;
@@ -235,6 +238,29 @@ footer {
 
 .modal a.close-modal:hover {
   transform: rotate(33deg); }
+
+.card {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 60%;
+  height: 400px;
+  border: 5px solid black; }
+  .card.template {
+    width: 60%;
+    height: 50%;
+    position: relative; }
+    .card.template > .card_wrap {
+      width: 100%;
+      padding-bottom: 56.25%;
+      /* 16:9 */
+      position: absolute; }
+    .card.template > .rank {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0; }
 
 @media screen and (max-width: 1000px) {
   .flex {

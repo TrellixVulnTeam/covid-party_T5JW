@@ -2,7 +2,7 @@
 // Credits: Jessica Bell
 
 var ranks = [];
-var deckLenght = 5;
+var deckLenght = 25;
 
 for(i=1; i <= deckLenght; i++) {
     ranks.push(i);
@@ -67,8 +67,8 @@ function makeCard( rank ) {
   
   card.removeClass("template");
   
-  card.find(".rank").append("<img src='../img/deck/carta_mentana_"+ rank + "'/>");
-
+  card.find(".rank").append("<img src='/dist/img/deck/carta_mentana_"+ rank + ".jpeg' class='img-responsive' />");
+  $("#card_title").html(rank);
   // Alert numero carta
   // alert(rank);
 
